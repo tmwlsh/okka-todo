@@ -14,14 +14,14 @@ interface TodoItemProps {
 }
 
 interface TodoContainerProps {
-  group: string;
+  group?: string;
 }
 
 const TodoItem: React.FC<TodoItemProps> = ({ item, toggleComplete }) => {
   const centered = 'left-[50%] top-[50%] -translate-x-[50%] -translate-y-[50%]';
-  
+
   return (
-    <div 
+    <div
       className={`transition group flex align-start justify-between mb-2 rounded-md overflow-hidden cursor-pointer drop-shadow-sm ${item.completed ? 'bg-blue-100' : 'bg-white'}`}
       onClick={() => toggleComplete(item.id)}
     >
